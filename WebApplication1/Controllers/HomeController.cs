@@ -13,14 +13,25 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Empresa()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Your contact page.";
 
             return View();
         }
+        public ActionResult Cursos()
+        {
+            ViewBag.Message = "Your contact page.";
 
-        public ActionResult Contact()
+            return View();
+        }
+        public ActionResult Instructor()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult Datos()
         {
             ViewBag.Message = "Your contact page.";
 
