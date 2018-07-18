@@ -18,6 +18,8 @@ namespace WebApplication1.Controllers {
 		{
 			if (ModelState.IsValid)
 			{
+
+				
 				using (Model1 db = new Model1())
 				{
 					var obj = db.UserProfiles.Where(a => a.UserName.Equals(objUser.UserName) && a.Password.Equals(objUser.Password)).FirstOrDefault();
@@ -25,24 +27,25 @@ namespace WebApplication1.Controllers {
 					{
 						Session["UserID"] = obj.UserId.ToString();
 						Session["UserName"] = obj.UserName.ToString();
-						return RedirectToAction("UserDashBoard");
+						return RedirectToAction("Index");
+					}
+
+					
+					var obj1 = db.UserProfiles.Where(a => a.UserName.Equals(objUser.UserName));
+					if (obj1 != null)
+					{
+
+					}
+					else {
+						ViewBag.Message = "Usuario o Contraseña Incorrecto";
 					}
 				}
+
 			}
 			return View(objUser);
 		}
 
-		public ActionResult UserDashBoard()
-		{
-			if (Session["UserID"] != null)
-			{
-				return View();
-			}
-			else
-			{
-				return RedirectToAction("Login");
-			}
-		}
+		
 		
 	public ActionResult Index()
 		{
@@ -74,6 +77,19 @@ namespace WebApplication1.Controllers {
 			return View();
 		}
 		public ActionResult Calendario()
+		{
+			ViewBag.Message = "Your contact page.";
+
+			return View();
+		}
+
+		public ActionResult  About()
+		{
+			ViewBag.Message = "Your contact page.";
+
+			return View();
+		}
+		public ActionResult Contact()
 		{
 			ViewBag.Message = "Your contact page.";
 
