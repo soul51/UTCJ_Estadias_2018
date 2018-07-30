@@ -95,7 +95,19 @@ namespace WebApplication1.Controllers {
 
 			return View();
 		}
-	}
+        public ActionResult Mision()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult Descuentos()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+    }
 
 }
 
