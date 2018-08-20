@@ -100,7 +100,7 @@ namespace WebApplication1.Controllers {
         }
         public ActionResult Descuentos()
         {
-            ViewBag.Message = "";
+            ViewBag.Message = " ";
 
             return View();
         }
